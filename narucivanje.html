@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=divice-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="main.css" />
+	<link rel="shortcut icon" href="dostava.jpg" />
+	<title>JELOVNIK</title>
+	<script>
+		window.onload = function() {
+		document.getElementById('phone').onchange = disablefield;
+		document.getElementById('name').onchange = disablefield;
+		document.getElementById('datum').disabled = false;
+		document.getElementById('ulica').disabled = false;
+		document.getElementById('name').checked = false;
+		document.getElementById('phone').checked = false;
+		document.getElementById('kucni_broj').disabled = false;
+		document.getElementById('grad').disabled = false;
+		document.getElementById('vrijeme').disabled = false;
+		document.getElementById('van_da').disabled = false;
+		document.getElementById('van_ne').disabled = false;
+		}
+
+		function disablefield()
+		{
+		if ( document.getElementById('name').checked == true ){
+		document.getElementById('ulica').value = '';
+		document.getElementById('ulica').disabled = true;
+		document.getElementById('kucni_broj').value = '';
+		document.getElementById('kucni_broj').disabled = true;
+		document.getElementById('grad').value = '';
+		document.getElementById('grad').disabled = true;
+		document.getElementById('datum').disabled = false;
+		document.getElementById('vrijeme').disabled = false;
+		document.getElementById('van_da').disabled = false;
+		document.getElementById('van_ne').disabled = false;}
+		else if (document.getElementById('phone').checked == true ){
+		document.getElementById('datum').value = '';
+		document.getElementById('datum').disabled = true;
+		document.getElementById('vrijeme').value = '';
+		document.getElementById('vrijeme').disabled = true;
+		document.getElementById('van_da').value = '';
+		document.getElementById('van_da').disabled = true;
+		document.getElementById('van_ne').disabled = true;
+		document.getElementById('ulica').disabled = false;
+		document.getElementById('kucni_broj').disabled = false;
+		document.getElementById('grad').disabled = false;
+		}
+		}
+	</script>
+</head>
+
+<body>
+	<div id="wrapper">
+		<div id="callout">
+			<p>Kontakt: <b>+38597723147</b></p>
+		</div>
+		<header>
+			<a href="index.html"><img src="fina.jpg" alt="POJEDI ME" title="POJEDI ME" /></a>	
+		</header>
+		<nav>
+			<ul>
+				<li><a href="index.html">Naslovna</a></li>
+				<li><a href="jelovnik.html">Jelovnik<img src="crta.jpg" /></a>
+					<ul>
+						<li><a href="jelovnik.html#jela_s_rostilja">Jela s roštilja</a></li>
+						<li><a href="jelovnik.html#tjestenina">Tjestenina</a></li>
+						<li><a href="jelovnik.html#deserti">Deserti</a></li>
+					</ul>
+				</li>
+				<li class="active"><a href="narucivanje.html">Naručivanje</a></li>
+				<li><a href="o_nama.html">O nama</a></li>
+			</ul>	
+		</nav>
+        <div class="clarfix"></div>
+		<section >
+			<form action="" method="get">
+			<fieldset class="order">
+			<legend>Odaberi jelo:</legend>
+			<fieldset>
+                <legend> Jela s roštilja</legend>
+                <p><label>Šiš ćevapi</label><input type="checkbox" name="šiš ćevapi" />
+                    <input type="text" name="sis_cevapcici_kom" maxlength="3" value="1" size="1"/> kom</p>
+                <p><label>Miješano meso</label><input type="checkbox" name="miješano meso" />
+                    <input type="text" name="mijesano_meso_kom" maxlength="3" value="1" size="1"/> kom</p>
+                <p><label>Kotlet sa žara</label><input type="checkbox" name="kotlet sa žara" />
+                    <input type="text" name="kotlet_sa_zara_kom" maxlength="3" value="1" size="1"/> kom</p>
+                <p><label>Hamburger</label><input type="checkbox" name="hamburger" />
+                    <input type="text" name="hamburger_kom" maxlength="3" value="1" size="1"/> kom</p>
+            </fieldset>
+            <fieldset>
+				<legend>Tjestenina:</legend>
+				<p><label>Carbonara</label><input type="checkbox" name="carbonara" />
+									<input type="text" name="carbonara_kom" maxlength="3" value="1" size="1"/> kom</p>
+				<p><label>Lazanje</label><input type="checkbox" name="lazanje" />
+									<input type="text" name="lazanje_kom" maxlength="3" value="1" size="1"/> kom</p>
+				<p><label>Bolognase</label><input type="checkbox" name="bolognase"   />
+									<input type="text" name="bolognase_kom" maxlength="3" value="1" size="1"/> kom</p>
+				<p><label>Piletina</label><input type="checkbox" name="piletina" />
+									<input type="text" name="piletina_kom" maxlength="3" value="1" size="1"/> kom</p>					
+			</fieldset>
+            <fieldset>
+				<legend>Deserti:</legend>
+				<p><label>Sladoled</label><input type="checkbox" name="sladoled" />
+									<input type="text" name="sladoled_kom" maxlength="3" value="1" size="1"/> kom</p>
+				<p><label>Štrukle</label><input type="checkbox" name="strukle" />
+									<input type="text" name="cokoladni_kolac_kom" maxlength="3" value="1" size="1"/> kom</p>
+				<p><label>Palačinke</label><input type="checkbox" name="palacinke"   />
+									<input type="text" name="palacinke_kom" maxlength="3" value="1" size="1"/> kom</p>
+				<p><label>Frape</label><input type="checkbox" name="frape" />
+									<input type="text" name="frape_kom" maxlength="3" value="1" size="1"/> kom</p>					
+			</fieldset>
+			</fieldset>
+            <fieldset>
+				<legend>Preuzimanje naruđbe:</legend>
+				<p class="info"><label>Ime</label><input type="text" name="ime" maxlength="15" size="15"/></p>
+				<p class="info"><label>Prezime</label><input type="text" name="prezime" maxlength="15" size="15"/></p><br/>	
+				<div class="delivery"><label>Dostava</label><input id="phone" type="radio" name="preuzimanje" value="dostava">
+					<fieldset class="to_home">
+						<p><label>Grad</label><input type="text" name="grad" id="grad" maxlength="15" size="15"/></p>
+						<p><label>Ulica</label><input type="text" name="ulica" id="ulica" maxlength="15" size="15"/></p>
+						<p><label>Kućni broj</label><input type="text" name="kucni_broj" id="kucni_broj" maxlength="15" size="15"/></p>
+					</fieldset>
+				</div>
+				<div class="delivery"><label>Preuzimanje u našoj poslovnici</label><input id="name" type="radio" name="preuzimanje" value="u_poslovnici">
+					<fieldset class="order_in">
+						<p><label>Datum</label><input id="datum"  type="text" name="datum" maxlength="15" size="15" placeholder="26.05.2021."/></p>
+						<p><label>Vrijeme</label><input  type="text" name="vrijeme" id="vrijeme" maxlength="15" size="15" placeholder="20"/>h</p>
+						<p><label>Za van?</label></p>
+						<p class="to_go"><label>Da</label><input type="radio" name="van" id="van_da" value="da"></p>
+						<p class="to_go"><label>Ne</label><input type="radio" name="van" id="van_ne" value="ne"></p>
+					</fieldset>
+				</div>
+			</fieldset>
+			<fieldset class="comment">
+			<legend>Komentar:</legend><textarea name="comment" rows="7" cols="70"></textarea>
+			</fieldset>
+			<div class="submit">
+				<input type="submit" value="Pošalji naruđbu"/>
+				<input type="reset" value="Reset"/>
+			</div>
+		</form>
+		</section>		
+		<footer>
+			<div class="end"><p>&#169;Copyright - Pojedi me</p></div>	
+		</footer>		
+	</div>	
+</body>
+</html>
